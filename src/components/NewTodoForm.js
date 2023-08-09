@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 
-const NewTodoForm = () => {
+const NewTodoForm = ({ addTodo }) => {
   const [newItem, setNewItem] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setTodos([
-    //   ...todos,
-    //   { id: crypto.randomUUID(), title: newItem, completed: false },
-    // ]);
+
+    addTodo(newItem);
     setNewItem("");
   };
   return (
